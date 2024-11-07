@@ -1,0 +1,62 @@
+.carrousel {
+  background-color: aquamarine;
+  position: absolute;
+  transform: scale(0);
+  transition: transform 0.5s;
+  top: 25%;
+  left: 25%;
+  height: 50vh;
+  width: 50vw;
+  border: 3px solid;
+  z-index: 9;
+  background-color: #e1eb2d;
+}
+
+.carrousel__x {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.carrousel--ouvrir {
+  transform: scale(1);
+}
+
+.carrousel__gauche, .carrousel__droit {
+  position: absolute;
+  top: 50%;
+  z-index: 9;
+}
+
+.carrousel__gauche {
+  left: 0;
+}
+
+.carrousel__droit {
+  right: 0;
+}
+
+.carrousel__figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.carrousel__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+
+.carrousel__img--visible {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
