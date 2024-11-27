@@ -1,5 +1,4 @@
 .carrousel {
-  background-color: aquamarine;
   position: absolute;
   transform: scale(0);
   transition: transform 0.5s;
@@ -7,9 +6,9 @@
   left: 25%;
   height: 50vh;
   width: 50vw;
-  border: 3px solid;
-  z-index: 9;
+  border: 3px solid #000;
   background-color: #e1eb2d;
+  z-index: 9;
 }
 
 .carrousel__x {
@@ -25,7 +24,8 @@
   transform: scale(1);
 }
 
-.carrousel__gauche, .carrousel__droit {
+.carrousel__gauche,
+.carrousel__droite {
   position: absolute;
   top: 50%;
   z-index: 9;
@@ -35,14 +35,12 @@
   left: 0;
 }
 
-.carrousel__droit {
+.carrousel__droite {
   right: 0;
 }
 
 .carrousel__figure {
   position: absolute;
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
 }
