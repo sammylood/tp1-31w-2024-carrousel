@@ -12,16 +12,39 @@
   
   console.log(galerie__img.length);
 
+
+
+  // Select all images in the gallery
+const images = document.querySelectorAll(".wp-block-image img");
+console.log(images);
+imageIndex = 0;
+// Add a single event listener on the parent element
+document.querySelector('figure.wp-block-gallery.has-nested-images').addEventListener('click', (event) => {
+  if (event.target.tagName === 'IMG') {
+    const imageIndex = Array.from(images).indexOf(event.target);
+    console.log(`Image clicked: ${imageIndex + 1}`); // Log the image number
+    imageNb = imageIndex + 1;
+    console.log(imageNb);
+  }
+
+});
+
+console.log(imageIndex);
+
+
 carrousel__droite.addEventListener("click", function(){
-  index++;
-  afficheImage(index);
+  
+  // console.log(carrousel__img);
+  // imageNb++;
+  // afficheImage(imageNb);
 })
 carrousel__gauche.addEventListener("click", function(){
-  index--;
-  afficheImage(index);
+  // index--;
+  // afficheImage(index);
 })
 
   function remplirCarrousel() {
+    i = 0;
     for (elm of galerie__img) {
       console.log(elm.src);
       //data set sur chacune des images
@@ -47,7 +70,7 @@ carrousel__gauche.addEventListener("click", function(){
     if (carrousel__figure.innerHTML === "") {
       remplirCarrousel();
     }
-    afficheImage(4);
+    afficheImage(1);
     carrousel.classList.add("carrousel--ouvrir");
     console.log("Ouvrir");
   });
@@ -57,6 +80,7 @@ carrousel__gauche.addEventListener("click", function(){
     console.log("fermer");
   });
 
+  
   function afficheImage(index){
     let carrousel__img = document.querySelectorAll(".carrousel__img");
     for (let i = 0; i < carrousel__img.length; i++) {
@@ -64,4 +88,10 @@ carrousel__gauche.addEventListener("click", function(){
     }
     carrousel__img[index].classList.add("carrousel__img--visible");
   }
+
+
+
+
+
+
 })();
