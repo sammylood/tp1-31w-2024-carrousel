@@ -40,9 +40,9 @@ carrousel__droite.addEventListener("click", function(){
   afficheImage(imageIndex);
 })
 carrousel__gauche.addEventListener("click", function(){
-  
+  imageIndex = (imageIndex -1 + galerie__img.length) % galerie__img.length;
   // index--;
-  // afficheImage(index);
+  afficheImage(imageIndex);
 })
 
   function remplirCarrousel() {
