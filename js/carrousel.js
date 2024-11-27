@@ -13,34 +13,31 @@
   console.log(galerie__img.length);
 
 
-
-  // Select all images in the gallery
-const images = document.querySelectorAll(".wp-block-image img");
-console.log(images);
 imageIndex = 0;
+//   // Select all images in the gallery
+// const images = document.querySelectorAll(".wp-block-image img");
+// console.log(images);
 
-// Add a single event listener on the parent element
-document.querySelector('figure.wp-block-gallery.has-nested-images').addEventListener('click', (event) => {
-  if (event.target.tagName === 'IMG') {
-    const imageIndex = Array.from(images).indexOf(event.target);
-    console.log(`Image clicked: ${imageIndex + 1}`); // Log the image number
-    imageNb = imageIndex + 1;
-    console.log(imageNb);
-  }
 
-});
+// // Add a single event listener on the parent element
+// document.querySelector('figure.wp-block-gallery.has-nested-images').addEventListener('click', (event) => {
+//   if (event.target.tagName === 'IMG') {
+//     const imageIndex = Array.from(images).indexOf(event.target);
+//     console.log(`Image clicked: ${imageIndex + 1}`);
+//   }
+// });
 
 console.log(imageIndex);
 
 
 carrousel__droite.addEventListener("click", function(){
-  imageIndex = (imageIndex +1) % galerie__img.length;
+  imageIndex = (imageIndex + 1) % galerie__img.length;
   // console.log(carrousel__img);
   // imageNb++;
   afficheImage(imageIndex);
 })
 carrousel__gauche.addEventListener("click", function(){
-  imageIndex = (imageIndex -1 + galerie__img.length) % galerie__img.length;
+  imageIndex = (imageIndex - 1 + galerie__img.length) % galerie__img.length;
   // index--;
   afficheImage(imageIndex);
 })
@@ -64,9 +61,24 @@ carrousel__gauche.addEventListener("click", function(){
    * @param {
    * } i numéro de radio
    */
-  function creationRadio(i){
-//creation d'un seul radio
-  }
+//   function creationRadio(i){
+// //creation d'un seul radio
+//   }
+
+    galerie__img.forEach((img, index) => {
+    img.addEventListener("click", function () {
+
+      if (carrousel__figure.innerHTML === "") {
+        remplirCarrousel(); 
+      }
+
+      imageIndex = index; 
+      afficheImage(imageIndex);
+      carrousel.classList.add("carrousel--ouvrir");
+      });
+    });
+
+
 
   carrousel__bouton.addEventListener("click", function () {
     if (carrousel__figure.innerHTML === "") {
@@ -90,9 +102,6 @@ carrousel__gauche.addEventListener("click", function(){
     }
     carrousel__img[index].classList.add("carrousel__img--visible");
   }
-
-
-
 
 
 
