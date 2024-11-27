@@ -18,6 +18,7 @@
 const images = document.querySelectorAll(".wp-block-image img");
 console.log(images);
 imageIndex = 0;
+
 // Add a single event listener on the parent element
 document.querySelector('figure.wp-block-gallery.has-nested-images').addEventListener('click', (event) => {
   if (event.target.tagName === 'IMG') {
@@ -33,12 +34,13 @@ console.log(imageIndex);
 
 
 carrousel__droite.addEventListener("click", function(){
-  
+  imageIndex = (imageIndex +1) % galerie__img.length;
   // console.log(carrousel__img);
   // imageNb++;
-  // afficheImage(imageNb);
+  afficheImage(imageIndex);
 })
 carrousel__gauche.addEventListener("click", function(){
+  
   // index--;
   // afficheImage(index);
 })
